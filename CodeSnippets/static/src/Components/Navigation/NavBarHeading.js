@@ -3,37 +3,30 @@ import {
     Container,
     Menu,
     Segment,
-    Visibility,
   } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom';
+import Favicon from './favicon.bmp';
+
 import NavBarUserPanel from "./NavBarUserPanel.js";
 
 const NavBarHeading = (props) => {
     return ( 
-        <Visibility
-          once={false}
-        >
           <Segment
-            inverted
             textAlign='center'
             vertical
           >
             <Menu
               fixed='top'
-              inverted={true}
-              pointing={false}
-              secondary={false}
+              inverted={false}
               size='large'
             >
               <Container>
-                <Menu.Item as='a'>Home</Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
-                <NavBarUserPanel isAuth='true' />
+                <img src={Favicon} alt="logo" style={{ marginTop: '0.4em', marginLeft: '0.1em',width: '30px', height: '30px' }}/>
+                <Menu.Item as='a' onClick={()=>{props.history.push('/')}}>Some snippets</Menu.Item>
+                <NavBarUserPanel isAuth='false' />
               </Container>
             </Menu>
-          </Segment>
-        </Visibility>);
+          </Segment>);
 }
  
-export default NavBarHeading;
+export default withRouter(NavBarHeading);

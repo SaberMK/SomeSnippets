@@ -1,7 +1,49 @@
-import React from 'react';
-const MainPage = (props) => {
-    console.log(props);
-    return ( <div><h1 position="center">Main Component</h1></div> );
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { deletePost } from '../Actions/postActions.js';
+
+//import axios from 'axios';
+
+class MainPage extends Component {
+    /*
+    componentDidMount() {
+        
+        axios.get('http://localhost:50670/api/test')
+             .then(res => {
+                 console.log(res.data);
+             }) 
+        
+    }
+        */
+    render() {
+        console.log(this.props);
+        const { posts } = this.props;
+
+        let items = posts.map((item) => 
+            <p key={item.id}>{item.title}</p>
+        );
+
+        return ( <div>
+            <h1 position="center">Main Component</h1>
+            {items}
+            
+            <button onClick={()=>{this.props.deletePost(0)}}>
+                DeletePost
+            </button>
+        </div> );
+    }
 }
- 
-export default MainPage;
+
+const mapStateToProps = (state) => {
+    return {
+        posts: state.posts
+    }
+}
+
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        deletePost: (id) => { dispatch(deletePost(id)) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(MainPage);
