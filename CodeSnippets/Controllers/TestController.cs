@@ -20,9 +20,9 @@ namespace CodeSnippets.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return _userService.GetTestString();
+            return Ok(await _userService.GetTestString());
         }
     }
 }
