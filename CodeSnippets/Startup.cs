@@ -31,6 +31,7 @@ namespace CodeSnippets
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddServicesDI();
+            services.AddMapperDI();
 
             services.AddCors(options =>
             {
@@ -42,7 +43,7 @@ namespace CodeSnippets
                 });
             });
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

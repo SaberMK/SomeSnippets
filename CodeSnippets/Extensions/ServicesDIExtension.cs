@@ -1,4 +1,5 @@
-﻿using CodeSnippets.Services;
+﻿using AutoMapper;
+using CodeSnippets.Services;
 using CodeSnippets.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -12,7 +13,7 @@ namespace CodeSnippets.Extensions
     {
         public static void AddServicesDI (this IServiceCollection services)
         {
-            services.AddSingleton<IUserService, UserService>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }

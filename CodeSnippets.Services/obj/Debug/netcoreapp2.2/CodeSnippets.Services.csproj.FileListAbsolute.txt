@@ -6,3 +6,4 @@ C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcorea
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.AssemblyInfo.cs
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.csprojAssemblyReference.cache
