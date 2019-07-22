@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\bin\Debug\netcoreapp2.2\CodeSnippets.Entities.deps.json
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\bin\Debug\netcoreapp2.2\CodeSnippets.Entities.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\bin\Debug\netcoreapp2.2\CodeSnippets.Entities.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.csprojAssemblyReference.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.AssemblyInfo.cs
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Entities.pdb

@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.deps.json
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.csprojAssemblyReference.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.AssemblyInfo.cs
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\bin\Debug\netcoreapp2.2\CodeSnippets.Services.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\bin\Debug\netcoreapp2.2\CodeSnippets.Services.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Utils\obj\Debug\netcoreapp2.2\CodeSnippets.Utils.csproj.CopyComplete

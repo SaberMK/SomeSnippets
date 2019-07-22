@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeSnippets.Services.Interfaces;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,16 @@ namespace CodeSnippets.Controllers
     [EnableCors("hah")]
     public class TestController : ControllerBase
     {
+        IUserService _userService;
+        public TestController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "response!";
+            return _userService.GetTestString();
         }
     }
 }

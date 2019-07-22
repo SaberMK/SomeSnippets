@@ -13,4 +13,9 @@
     <Folder Include="static\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodeSnippets.Services\CodeSnippets.Services.csproj" />
+    <ProjectReference Include="..\CodeSnippets.Utils\CodeSnippets.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
