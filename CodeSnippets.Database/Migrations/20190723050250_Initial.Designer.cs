@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeSnippets.Database.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20190723033558_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190723050250_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,7 @@ namespace CodeSnippets.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }

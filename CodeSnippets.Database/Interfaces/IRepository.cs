@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CodeSnippets.Database.Interfaces
 {
-    public interface IRepository<IEntity>
+    public interface IRepository<TEntity> where TEntity : class, IEntity, new()
     {
         void Commit();
         Task CommitAsync();
-        void Add(IEntity entity);
-        IQueryable<IEntity> Query();
+        void Add(TEntity entity);
+        IQueryable<TEntity> Query();
     }
 }

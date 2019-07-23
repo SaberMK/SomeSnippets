@@ -29,7 +29,8 @@ namespace CodeSnippets.Extensions
 
         private static void AddContexts(IServiceCollection services)
         {
-            services.AddScoped<IUserContext, UserContext>();
+            //            services.AddScoped<BaseRepository<User>, UserContext>();
+            services.AddSingleton<IUserContext, UserContext>();
         }
     }
 }

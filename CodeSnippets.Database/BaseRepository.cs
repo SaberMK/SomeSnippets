@@ -4,41 +4,45 @@ using CodeSnippets.Entities.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeSnippets.Database
 {
-    //public class BaseRepository<TEntity> : IRepository<IEntity> 
-    //{
-    //    protected DbSet<TEntity> Entities {get; set;}
+    public class BaseRepository<TEntity> : DbContext, IRepository<TEntity> where TEntity : class, IEntity, new()
+    {
+        protected DbSet<TEntity> Entities { get; set; }
 
-    //    public BaseRepository(DbSet<TEntity> entities)
-    //    {
-    //        Entities = entities;
-    //    }
+        public void Add(TEntity entity)
+        {
+            Entities.Add(entity);
+        }
 
-    //    public void Add(User entity)
-    //    {
-    //        Entities.Add((IEntity)entity);
-    //    }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //var connection = configuration.GetConnectionString("DefaultConnection");
 
-    //    public void Commit()
-    //    {
-    //        SaveChanges();
-    //    }
+            optionsBuilder.UseSqlServer("Data Source=WINDOWS-6HPH7SV\\SQLEXPRESS;Initial Catalog=codesnippetsdb;Integrated Security=True");
+            base.OnConfiguring(optionsBuilder);
+        }
 
-    //    public async Task CommitAsync()
-    //    {
-    //        await SaveChangesAsync();
-    //    }
+        public void Commit()
+        {
+            SaveChanges();
+        }
 
-    //    public IQueryable<User> Query()
-    //    {
-    //        return Users as IQueryable<User>;
-    //    }
-    //}
+        public async Task CommitAsync()
+        {
+            await SaveChangesAsync();
+        }
+        
+        public IQueryable<TEntity> Query()
+        {
+            return Entities as IQueryable<TEntity>;
+        }
+    }
     //public class BaseRepository<TEntity> :  DbContext, IRepository<TEntity> where TEntity : class, IEntity, new()
     //{
     //    //private DbSet<TEntity> Entities { get; set; }

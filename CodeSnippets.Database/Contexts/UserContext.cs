@@ -10,32 +10,14 @@ using System.Threading.Tasks;
 
 namespace CodeSnippets.Database.Contexts
 {
-    public class UserContext : DbContext, IUserContext
+    public class UserContext : BaseRepository<User>, IUserContext /* DbContext, IUserContext  */
     {
-        public UserContext(DbContextOptions<UserContext> options) : base(options) { }
-
         public DbSet<User> Users { get; set; }
-
-        public new void Add(User entity)
+        public UserContext()
         {
-            Users.Add(entity);
+            Entities = Users;
         }
-
-        public void Commit()
-        {
-            SaveChanges();
-        }
-
-        public async Task CommitAsync()
-        {
-            await SaveChangesAsync();
-        }
-
-        public IQueryable<User> Query()
-        {
-            return Users as IQueryable<User>;
-        }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

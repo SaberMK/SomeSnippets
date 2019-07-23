@@ -1,4 +1,7 @@
-﻿using CodeSnippets.Database.Contexts;
+﻿using CodeSnippets.Database;
+using CodeSnippets.Database.Contexts;
+using CodeSnippets.Database.Interfaces;
+using CodeSnippets.Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,10 +16,10 @@ namespace CodeSnippets.Extensions
     {
         public static void AddEntityFramework(this IServiceCollection services, IConfiguration configuration)
         {
-            var connection = configuration.GetConnectionString("DefaultConnection");
-
-            services.AddDbContext<UserContext>(options =>
-                options.UseSqlServer(connection));
+            //var connection = configuration.GetConnectionString("DefaultConnection");
+            
+            //services.AddDbContext<UserContext>(options =>
+            //    options.UseSqlServer(connection));
 
         }
     }
