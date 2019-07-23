@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeSnippets.Database\CodeSnippets.Database.csproj" />
   </ItemGroup>
 
 </Project>

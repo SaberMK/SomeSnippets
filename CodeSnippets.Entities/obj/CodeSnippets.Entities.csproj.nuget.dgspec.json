@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Entities.csproj": {}
+    "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Entities.csproj": {
+    "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj",
         "projectName": "CodeSnippets.Entities",
-        "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Entities.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

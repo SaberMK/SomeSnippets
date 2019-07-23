@@ -15,6 +15,8 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using CodeSnippets.Extensions;
+using CodeSnippets.Database.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSnippets
 {
@@ -33,6 +35,8 @@ namespace CodeSnippets
             services.AddServicesDI();
             services.AddMapperDI();
 
+            services.AddEntityFramework(Configuration);
+
             services.AddCors(options =>
             {
                 options.AddPolicy("hah",
@@ -42,14 +46,13 @@ namespace CodeSnippets
                                         "http://localhost:50670");
                 });
             });
-            
+
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            
             app.UseDefaultFiles(new DefaultFilesOptions
             {
                 DefaultFileNames = new List<string> { "index.html" }
@@ -70,6 +73,7 @@ namespace CodeSnippets
             }
 
             app.UseCors();
+
             app.UseMvc(); //TODO
         }
     }
