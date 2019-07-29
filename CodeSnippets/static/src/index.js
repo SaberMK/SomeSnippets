@@ -4,17 +4,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'fomantic-ui/dist/semantic.min.css';
 
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from "./Reducers/rootReducer.js";
 
-const store = createStore(rootReducer);
+import configureStore from './Store/configureStore.js';
 
-/*
+const store = configureStore();
+
+
 ReactDOM.render(<Provider store={store}>
         <App />
     </Provider>, 
     document.getElementById('root'));
-    */
+    
 
 serviceWorker.unregister();

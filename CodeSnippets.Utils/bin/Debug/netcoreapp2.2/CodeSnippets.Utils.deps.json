@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.2": {
       "CodeSnippets.Utils/1.0.0": {
         "dependencies": {
-          "CodeSnippets.Services": "1.0.0"
+          "CodeSnippets.Services": "1.0.0",
+          "Newtonsoft.Json": "11.0.0.0"
         },
         "runtime": {
           "CodeSnippets.Utils.dll": {}
@@ -578,6 +579,14 @@
         "runtime": {
           "CodeSnippets.Services.dll": {}
         }
+      },
+      "Newtonsoft.Json/11.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
       }
     }
   },
@@ -1005,6 +1014,11 @@
     },
     "CodeSnippets.Services/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/11.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

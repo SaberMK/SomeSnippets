@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import { Button, Menu, Dropdown } from "semantic-ui-react";
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class NavBarUserPanel extends Component {
     render() { 
         let isAuth = this.props.isAuth;
+        let username = this.props.username;
+        let greetingsText = `Здарова, ${username}!`;
         return ( 
-            isAuth==='true' ? (
+            !isAuth ? (
 
               <Menu.Item position='right'>
                 <Button as='a' inverted={true} onClick={()=>this.props.history.push('/login')}>
@@ -18,14 +21,20 @@ class NavBarUserPanel extends Component {
               </Menu.Item>) : (
 
               <Menu.Item position='right'>
-                  <Dropdown text='Здарова, %USERNAME%' >
+                  <Dropdown text={greetingsText} >
                     <Dropdown.Menu>
                       <Dropdown.Item text='Profile' />
-                      <Dropdown.Item text='Log out' description='ну и пошел нахуй' />
+                      <Dropdown.Item text='Log out'/>
                     </Dropdown.Menu>
                   </Dropdown>
               </Menu.Item>));
     }
 }
- //<Link as='p' to='/login'>Log In</Link>
-export default withRouter(NavBarUserPanel);
+
+const mapStateToProps = ({global}) => {
+  return {
+    username : global.username
+  }
+};
+
+export default withRouter(connect(mapStateToProps)(NavBarUserPanel));
