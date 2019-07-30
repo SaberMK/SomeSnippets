@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import userReducer from './userReducer.js';
+import { reducer as formReducer } from 'redux-form';
 import globalReducer from './globalReducer.js';
 
 export default combineReducers( {
     global : globalReducer,
-    user: userReducer
+    form: formReducer
 });

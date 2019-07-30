@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "2a61c38d662d96d03a090438bfad1ea4d53af402"
+    "signature": "045c79d03ebe88b670e02041e5600150feb6f532"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,7 +10,9 @@
         "dependencies": {
           "AutoMapper": "8.1.1",
           "CodeSnippets.Database": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "2.2.6"
+          "CodeSnippets.Utils": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "CodeSnippets.Services.dll": {}
@@ -217,6 +219,14 @@
           "runtime/win/lib/_._": {
             "rid": "win",
             "assetType": "runtime"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         }
       },
@@ -570,6 +580,15 @@
         "runtime": {
           "CodeSnippets.Entities.dll": {}
         }
+      },
+      "CodeSnippets.Utils/1.0.0": {
+        "dependencies": {
+          "CodeSnippets.Entities": "1.0.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "CodeSnippets.Utils.dll": {}
+        }
       }
     }
   },
@@ -711,6 +730,13 @@
       "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",
@@ -991,6 +1017,11 @@
       "sha512": ""
     },
     "CodeSnippets.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CodeSnippets.Utils/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeSnippets.Services\CodeSnippets.Services.csproj" />
+    <ProjectReference Include="..\CodeSnippets.Entities\CodeSnippets.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,11 +1,14 @@
-﻿using System;
+﻿using CodeSnippets.Utils.ResponseCreators;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CodeSnippets.Utils.Interfaces
 {
-    public interface IResponseCreator<T> where T : class
+    public interface IResponseCreator
     {
-        string Create(T viewModel, int error);
+        ResponseViewModel CreateSuccess(object viewModel);
+        ResponseViewModel CreateFailure(string message);
+        ResponseViewModel CreateFailure(string[] messages);
     }
 }

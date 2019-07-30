@@ -1004,6 +1004,20 @@
         "runtime": {
           "bin/placeholder/CodeSnippets.Entities.dll": {}
         }
+      },
+      "CodeSnippets.Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "CodeSnippets.Entities": "1.0.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CodeSnippets.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CodeSnippets.Utils.dll": {}
+        }
       }
     }
   },
@@ -3782,12 +3796,18 @@
       "type": "project",
       "path": "../CodeSnippets.Entities/CodeSnippets.Entities.csproj",
       "msbuildProject": "../CodeSnippets.Entities/CodeSnippets.Entities.csproj"
+    },
+    "CodeSnippets.Utils/1.0.0": {
+      "type": "project",
+      "path": "../CodeSnippets.Utils/CodeSnippets.Utils.csproj",
+      "msbuildProject": "../CodeSnippets.Utils/CodeSnippets.Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 8.1.1",
       "CodeSnippets.Database >= 1.0.0",
+      "CodeSnippets.Utils >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 2.2.6",
       "Microsoft.NETCore.App >= 2.2.0",
       "Newtonsoft.Json >= 12.0.2"
@@ -3825,6 +3845,9 @@
           "projectReferences": {
             "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Database.csproj": {
               "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Database\\CodeSnippets.Database.csproj"
+            },
+            "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Utils\\CodeSnippets.Utils.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Utils\\CodeSnippets.Utils.csproj"
             }
           }
         }

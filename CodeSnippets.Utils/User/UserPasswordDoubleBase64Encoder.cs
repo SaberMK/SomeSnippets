@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodeSnippets.Utils.User
 {
-    class UserPasswordDoubleBase64Encoder : IUserPasswordEncoder
+    public class UserPasswordDoubleBase64Encoder : IUserPasswordEncoder
     {
         public string EncodeUserPassword(string password)
         {

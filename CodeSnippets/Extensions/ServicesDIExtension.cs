@@ -5,6 +5,9 @@ using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Entities.Entities;
 using CodeSnippets.Services;
 using CodeSnippets.Services.Interfaces;
+using CodeSnippets.Utils.Interfaces;
+using CodeSnippets.Utils.ResponseCreators;
+using CodeSnippets.Utils.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,8 +32,10 @@ namespace CodeSnippets.Extensions
 
         private static void AddContexts(IServiceCollection services)
         {
-            //            services.AddScoped<BaseRepository<User>, UserContext>();
             services.AddSingleton<IUserContext, UserContext>();
+            services.AddSingleton<IUserPasswordEncoder, UserPasswordDoubleBase64Encoder>();
+            services.AddSingleton<IResponseCreator, ResponseCreator>();
+            services.AddSingleton<IUserTokenCreator>(s => new UserTokenHMACCreator("☺☺☺"));
         }
     }
 }

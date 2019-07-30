@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeSnippets.Database\CodeSnippets.Database.csproj" />
+    <ProjectReference Include="..\CodeSnippets.Utils\CodeSnippets.Utils.csproj" />
   </ItemGroup>
 
 </Project>

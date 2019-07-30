@@ -15,9 +15,9 @@ namespace CodeSnippets.Database
     {
         protected DbSet<TEntity> Entities { get; set; }
 
-        public void Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
-            Entities.Add(entity);
+            await Entities.AddAsync(entity);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

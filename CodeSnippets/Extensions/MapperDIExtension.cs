@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CodeSnippets.Mappings;
 using CodeSnippets.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,10 +15,11 @@ namespace CodeSnippets.Extensions
         {
             var mappingConfig = new MapperConfiguration(mc =>
             {
-                mc.AddProfile(new View1ToView2Config());
+                mc.AddProfile(new ViewModelsMapping());
             });
+
             IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton<IMapper>(mapper);
+            services.AddSingleton(mapper);
         }
     }
 }

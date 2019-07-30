@@ -11,7 +11,7 @@ namespace CodeSnippets.Database.Interfaces
     {
         void Commit();
         Task CommitAsync();
-        void Add(TEntity entity);
+        Task Add(TEntity entity);
         IQueryable<TEntity> Query();
     }
 }

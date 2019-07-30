@@ -2,6 +2,7 @@
 using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Entities.Entities;
 using CodeSnippets.Services.Interfaces;
+using CodeSnippets.Utils.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,53 @@ namespace CodeSnippets.Services
 {
     public class UserService : IUserService
     {
-        IMapper _mapper;
-        IUserContext _userContext;
-        public UserService(IMapper mapper , IUserContext userContext)
+        readonly IMapper _mapper;
+        readonly IUserContext _userContext;
+        readonly IUserPasswordEncoder _encoder;
+        public UserService(IMapper mapper, IUserContext userContext , IUserPasswordEncoder encoder )
         {
             _mapper = mapper;
+            _encoder = encoder;
             _userContext = userContext;
         }
+        public async Task<bool> IsUserExists(string username)
+        {
+            var user = await _userContext.Query().SingleOrDefaultAsync(x => x.Username == username);
+            return user != null;   
+        }
+
+        public async Task<User> AuthUser(string username, string password)
+        {
+            try
+            {
+                return await _userContext.Query().SingleAsync(x => x.Username == username && x.Password == _encoder.EncodeUserPassword(password));
+            }
+            catch //TODO
+            {
+                return null;
+            }
+        }
+
+        public async Task<User> RegisterUser(string username, string password)
+        {
+            try
+            {
+                await _userContext.Add(new User()
+                {
+                    Username = username,
+                    Password = _encoder.EncodeUserPassword(password),
+                    RegistrationDate = DateTime.Now
+                });
+                await _userContext.CommitAsync();
+
+                return await _userContext.Query().SingleAsync(x => x.Username == username);
+            }
+            catch //TODO
+            {
+                return null;
+            }
+        }
+
         public async Task<string> GetTestString()
         {
             var user = new User()
@@ -27,7 +68,7 @@ namespace CodeSnippets.Services
                 Password = "qwerty123",
                 RegistrationDate = DateTime.Now
             };
-            _userContext.Add(user);
+            await _userContext.Add(user);
             await _userContext.CommitAsync();
             var newUser = await _userContext.Query().SingleAsync(x => x.Username == user.Username);
             return newUser.Id.ToString();

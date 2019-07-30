@@ -6,23 +6,32 @@ using System.Text;
 
 namespace CodeSnippets.Utils.ResponseCreators
 {
-    public class ResponseCreator<T> : IResponseCreator<T> where T: class
+    public class ResponseCreator: IResponseCreator
     {
-        public string Create(T viewModel, int error)
+
+        public ResponseViewModel CreateFailure(string message)
         {
-            var response = new ResponseCreatorModel(error, JsonConvert.SerializeObject(viewModel));
-            return JsonConvert.SerializeObject(response);
+            return new ResponseViewModel(1, message);
         }
 
-        public class ResponseCreatorModel
+        public ResponseViewModel CreateFailure(string[] messages)
         {
-            public ResponseCreatorModel(int error, string response)
-            {
-                Error = error;
-                Response = response;
-            }
-            public int Error { get; set; }
-            public string Response { get; set; }
+            return new ResponseViewModel(1, messages);
         }
+
+        public ResponseViewModel CreateSuccess(object viewModel)
+        {
+            return new ResponseViewModel(0, viewModel);
+        }
+    }
+    public class ResponseViewModel
+    {
+        public ResponseViewModel(int error, object response)
+        {
+            Error = error;
+            Response = response;
+        }
+        public int Error { get; set; }
+        public object Response { get; set; }
     }
 }
