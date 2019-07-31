@@ -42,8 +42,9 @@ namespace CodeSnippets
                 options.AddPolicy("hah",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000",
-                                        "http://localhost:50670");
+                    builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
                 });
             });
 
@@ -66,6 +67,7 @@ namespace CodeSnippets
                  RequestPath = "/static"
             });
 
+            app.UseCors("hah");
 
             if (env.IsDevelopment())
             {
