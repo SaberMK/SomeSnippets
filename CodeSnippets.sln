@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSnippets.Utils", "CodeS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSnippets.Services", "CodeSnippets.Services\CodeSnippets.Services.csproj", "{E57135AB-36A2-44B3-B956-C7DE5E13E04B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeSnippets.Entities", "CodeSnippets.Entities\CodeSnippets.Entities.csproj", "{4CA11C21-0077-40AF-9EB7-0F8E2007BC4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSnippets.Entities", "CodeSnippets.Entities\CodeSnippets.Entities.csproj", "{4CA11C21-0077-40AF-9EB7-0F8E2007BC4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeSnippets.Database", "CodeSnippets.Database\CodeSnippets.Database.csproj", "{89CB0129-AACB-4042-BC67-E299E9ED7865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSnippets.Database", "CodeSnippets.Database\CodeSnippets.Database.csproj", "{89CB0129-AACB-4042-BC67-E299E9ED7865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeSnippets.Tests", "CodeSnippets.Tests\CodeSnippets.Tests.csproj", "{261C5EB5-D78E-4A9B-ACEB-4F06FE1D2F39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{89CB0129-AACB-4042-BC67-E299E9ED7865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89CB0129-AACB-4042-BC67-E299E9ED7865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89CB0129-AACB-4042-BC67-E299E9ED7865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261C5EB5-D78E-4A9B-ACEB-4F06FE1D2F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261C5EB5-D78E-4A9B-ACEB-4F06FE1D2F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261C5EB5-D78E-4A9B-ACEB-4F06FE1D2F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261C5EB5-D78E-4A9B-ACEB-4F06FE1D2F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
