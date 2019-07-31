@@ -14,7 +14,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "^8.2.5",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.87.3"
+    "semantic-ui-react": "^0.87.3",
+    "toastr": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

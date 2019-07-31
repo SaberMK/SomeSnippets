@@ -5,6 +5,7 @@ import { formInput } from './Helpers';
 import axios from "axios";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import toastr from "toastr";
 
 import { AUTH_USER } from '../../Actions/globalActions';
 
@@ -40,7 +41,8 @@ const handleAuthUser = (values, authUser, history) => {
                 });
                 history.push('/');
             } else {
-
+                console.log('Showing toast...')
+                toastr.error(res.data.response, 'Error')
             }
         });
 }
