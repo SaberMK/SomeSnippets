@@ -37,7 +37,14 @@ namespace CodeSnippets.Database.Contexts
                 .Property(user => user.RegistrationDate)
                 .IsRequired();
 
+            modelBuilder.Entity<User>()
+                .Property(user => user.AccessLevel)
+                .HasDefaultValue(AccessLevel.USER);
 
+
+
+            //SEED
+            //NO SEED :(
         }
 
         //public UserContext(DbContextOptions options) : base(options) //AAAAAAAAAAAAAAAAAAAAAAAAAAA TODO

@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190806160419_AddAccessLevelToUser.cs" />
+    <Compile Remove="Migrations\20190806160419_AddAccessLevelToUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Contexts\" />
   </ItemGroup>
 

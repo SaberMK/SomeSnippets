@@ -8,6 +8,7 @@ import { withRouter } from 'react-router-dom'
 import toastr from "toastr";
 
 import { AUTH_USER } from '../../Actions/globalActions';
+import { AUTH_USER_API_PATH } from '../../Api';
 
 const LoginForm = props => {
     let { authUser, values, history } = props;
@@ -19,29 +20,30 @@ const LoginForm = props => {
             </Form.Field>
             <Form.Field>
                 <label>Password</label>
-                <Field name="password" placeholder="Your password" id='password' width='6' component={formInput} />
+                <Field name="password" placeholder="Your password" id='password' width='6' hasPassword={true} component={formInput} />
             </Form.Field>
             <Button type='submit' >Submit</Button>
         </Form>
     )
 }
 
-const handleAuthUser = (values, authUser, history) => {
+const handleAuthUser = ( values, authUser, history ) => {
     let { username, password } = values;
-    axios
-        .post("http://localhost:50670/api/user/auth", {
+
+    axios.post(AUTH_USER_API_PATH, {
             username,
             password
         })
         .then(res => {
             if(res.data.error === 0) { // if err != nil lol just kiddin'
+                console.log(res.data);
                 let result = res.data.response;
                 authUser({
                     ...result
                 });
                 history.push('/');
             } else {
-                console.log('Showing toast...')
+                console.log('Showing toast...', res.data.response);
                 toastr.error(res.data.response, 'Error')
             }
         });

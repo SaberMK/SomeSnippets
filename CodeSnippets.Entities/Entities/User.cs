@@ -11,5 +11,13 @@ namespace CodeSnippets.Entities.Entities
         public string Username { get; set; }
         public string Password { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public AccessLevel AccessLevel { get; set; }
+        
+    }
+    public enum AccessLevel : byte
+    {
+        USER = 0,
+        MODERATOR = 1,
+        ADMINISTRATOR = 2
     }
 }

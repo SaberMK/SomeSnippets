@@ -3,7 +3,9 @@ C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcorea
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Services.pdb
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Database.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Entities.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Database.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.pdb
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Entities.pdb
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.csprojAssemblyReference.cache
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.csproj.CoreCompileInputs.cache
@@ -12,5 +14,3 @@ C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcorea
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.csproj.CopyComplete
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\obj\Debug\netcoreapp2.2\CodeSnippets.Services.pdb
-C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.dll
-C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Services\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.pdb

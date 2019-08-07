@@ -1,4 +1,4 @@
-import { AUTH_USER, authUser } from "../Actions/globalActions.js";
+import { AUTH_USER } from "../Actions/globalActions.js";
 
 const initState = {
     token : '',

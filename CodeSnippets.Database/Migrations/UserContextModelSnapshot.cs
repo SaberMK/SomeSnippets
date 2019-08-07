@@ -25,6 +25,10 @@ namespace CodeSnippets.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<byte>("AccessLevel")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue((byte)0);
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(30);
@@ -38,6 +42,16 @@ namespace CodeSnippets.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            AccessLevel = (byte)2,
+                            Password = "TVRJeg==",
+                            RegistrationDate = new DateTime(2019, 8, 6, 19, 9, 16, 452, DateTimeKind.Local).AddTicks(6864),
+                            Username = "SaberMK"
+                        });
                 });
 #pragma warning restore 612, 618
         }
