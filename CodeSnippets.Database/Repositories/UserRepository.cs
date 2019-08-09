@@ -25,13 +25,20 @@ namespace CodeSnippets.Database.Repositories
             builder.HasKey(user => user.Id);
 
             builder.Property(user => user.Username)
-                .HasMaxLength(30);
+                .HasMaxLength(30)
+                .IsRequired();
 
             builder.Property(user => user.Password)
-                .HasMaxLength(30);
+                .HasMaxLength(30)
+                .IsRequired();
 
             builder.Property(user => user.AccessLevel)
-                .HasDefaultValue(AccessLevel.USER);
+                .HasDefaultValue(AccessLevel.USER)
+                .IsRequired();
+
+            builder.HasMany(user => user.Snippets)
+                .WithOne(snippet => snippet.Author)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

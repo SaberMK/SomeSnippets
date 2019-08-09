@@ -12,7 +12,7 @@ namespace CodeSnippets.Entities.Entities
         public string Password { get; set; }
         public DateTime RegistrationDate { get; set; }
         public AccessLevel AccessLevel { get; set; }
-        
+        public ICollection<Snippet> Snippets { get; set; }
     }
     public enum AccessLevel : byte
     {
