@@ -32,6 +32,9 @@
             "projectReferences": {
               "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj": {
                 "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Entities\\CodeSnippets.Entities.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Utils\\CodeSnippets.Utils.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CodeSnippets\\CodeSnippets.Utils\\CodeSnippets.Utils.csproj"
               }
             }
           }

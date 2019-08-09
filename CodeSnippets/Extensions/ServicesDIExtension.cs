@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
 using CodeSnippets.Database;
-using CodeSnippets.Database.Contexts;
+using CodeSnippets.Database.Concrete;
+using CodeSnippets.Database.Concrete.Interfaces;
 using CodeSnippets.Database.Interfaces;
+using CodeSnippets.Database.Repositories;
+using CodeSnippets.Database.Repositories.Interfaces;
 using CodeSnippets.Entities.Entities;
 using CodeSnippets.Services;
 using CodeSnippets.Services.Interfaces;
@@ -32,7 +35,8 @@ namespace CodeSnippets.Extensions
 
         private static void AddContexts(IServiceCollection services)
         {
-            services.AddSingleton<IUserContext, UserContext>();
+            services.AddScoped<ICodeSnippetsDbContextFactory, CodeSnippetsDbContextFactory>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddSingleton<IUserPasswordEncoder, UserPasswordDoubleBase64Encoder>();
             services.AddSingleton<IResponseCreator, ResponseCreator>();
             services.AddSingleton<IUserTokenCreator>(s => new UserTokenHMACCreator("☺☺☺"));

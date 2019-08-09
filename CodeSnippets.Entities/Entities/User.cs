@@ -7,7 +7,7 @@ namespace CodeSnippets.Entities.Entities
 {
     public class User : IEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public DateTime RegistrationDate { get; set; }

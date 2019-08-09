@@ -1,5 +1,4 @@
 ﻿using CodeSnippets.Database;
-using CodeSnippets.Database.Contexts;
 using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Entities.Entities;
 using Microsoft.EntityFrameworkCore;

@@ -567,6 +567,7 @@
       "CodeSnippets.Database/1.0.0": {
         "dependencies": {
           "CodeSnippets.Entities": "1.0.0",
+          "CodeSnippets.Utils": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.6",
           "Microsoft.EntityFrameworkCore.Relational": "2.2.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6",

@@ -15,7 +15,6 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using CodeSnippets.Extensions;
-using CodeSnippets.Database.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodeSnippets

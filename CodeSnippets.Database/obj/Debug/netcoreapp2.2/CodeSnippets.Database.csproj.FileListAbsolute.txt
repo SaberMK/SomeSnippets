@@ -10,3 +10,5 @@ C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcorea
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Database.csproj.CopyComplete
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Database.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\obj\Debug\netcoreapp2.2\CodeSnippets.Database.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.dll
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Database\bin\Debug\netcoreapp2.2\CodeSnippets.Utils.pdb

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CodeSnippets.Database.Interfaces;
+using CodeSnippets.Database.Repositories.Interfaces;
 using CodeSnippets.Entities.Entities;
 using CodeSnippets.Services.Interfaces;
 using CodeSnippets.Utils.Interfaces;
@@ -14,9 +15,9 @@ namespace CodeSnippets.Services
     public class UserService : IUserService
     {
         readonly IMapper _mapper;
-        readonly IUserContext _userContext;
+        readonly IUserRepository _userContext;
         readonly IUserPasswordEncoder _encoder;
-        public UserService(IMapper mapper, IUserContext userContext , IUserPasswordEncoder encoder )
+        public UserService(IMapper mapper, IUserRepository userContext , IUserPasswordEncoder encoder )
         {
             _mapper = mapper;
             _encoder = encoder;
@@ -44,7 +45,7 @@ namespace CodeSnippets.Services
         {
             try
             {
-                await _userContext.Add(new User()
+                await _userContext.AddAsync(new User()
                 {
                     Username = username,
                     Password = _encoder.EncodeUserPassword(password),
@@ -68,7 +69,7 @@ namespace CodeSnippets.Services
                 Password = "qwerty123",
                 RegistrationDate = DateTime.Now
             };
-            await _userContext.Add(user);
+            await _userContext.AddAsync(user);
             await _userContext.CommitAsync();
             var newUser = await _userContext.Query().SingleAsync(x => x.Username == user.Username);
             return newUser.Id.ToString();
