@@ -27,10 +27,12 @@ namespace CodeSnippets.Database.Repositories.M2MMappings
 
             builder.HasOne(snippetTag => snippetTag.Snippet)
                 .WithMany(snippet => snippet.SnippetTags)
+                .HasForeignKey(snippetTag => snippetTag.SnippetId)
                 .IsRequired();
 
             builder.HasOne(snippetTag => snippetTag.Tag)
                 .WithMany(tag => tag.SnippetTags)
+                .HasForeignKey(snippetTag => snippetTag.TagId)
                 .IsRequired();
         }
     }

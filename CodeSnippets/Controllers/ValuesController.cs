@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeSnippets.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeSnippets.Controllers
@@ -10,10 +11,17 @@ namespace CodeSnippets.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        IUserService _userService;
+        public ValuesController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
+            await _userService.GetTestString();
             return new string[] { "value1", "value2" };
         }
 

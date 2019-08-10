@@ -17,11 +17,15 @@ namespace CodeSnippets.Services
         readonly IMapper _mapper;
         readonly IUserRepository _userContext;
         readonly IUserPasswordEncoder _encoder;
-        public UserService(IMapper mapper, IUserRepository userContext , IUserPasswordEncoder encoder )
+        ITagRepository _tagRepository;
+        public UserService(IMapper mapper, IUserRepository userContext, IUserPasswordEncoder encoder
+            , ITagRepository tagRepository)
         {
             _mapper = mapper;
             _encoder = encoder;
             _userContext = userContext;
+
+            _tagRepository = tagRepository;
         }
         public async Task<bool> IsUserExists(string username)
         {
@@ -63,22 +67,32 @@ namespace CodeSnippets.Services
 
         public async Task<string> GetTestString()
         {
-            var user = new User()
+            //Add Tag
+            _tagRepository.Add(new Tag()
             {
-                Username = "TestUser",
-                Password = "qwerty123",
-                RegistrationDate = DateTime.Now
-            };
-            await _userContext.AddAsync(user);
-            await _userContext.CommitAsync();
-            var newUser = await _userContext.Query().SingleAsync(x => x.Username == user.Username);
-            return newUser.Id.ToString();
+                Content = "C#"
+            });
+            _tagRepository.Add(new Tag()
+            {
+                Content = "JavaScript"
+            });
+            await _tagRepository.CommitAsync();
+            //var user = new User()
+            //{
+            //    Username = "TestUser",
+            //    Password = "qwerty123",
+            //    RegistrationDate = DateTime.Now
+            //};
+            //await _userContext.AddAsync(user);
+            //await _userContext.CommitAsync();
+            //var newUser = await _userContext.Query().SingleAsync(x => x.Username == user.Username);
+            //return newUser.Id.ToString();
 
             //var asd1 = new View1() { Obj1 = "Response! " };
             //await Task.Delay(100);
 
 
-
+            return "))";
             //return _mapper.Map<View1, View2>(asd1).Obj1;
         }
     }

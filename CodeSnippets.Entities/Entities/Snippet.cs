@@ -17,6 +17,5 @@ namespace CodeSnippets.Entities.Entities
         public long LanguageId { get; set; }
         public Language Language { get; set; }
         public ICollection<SnippetTag> SnippetTags { get; set; }
-
     }
 }
