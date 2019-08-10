@@ -3,6 +3,7 @@ using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Database.Repositories.Interfaces;
 using CodeSnippets.Entities.Entities;
 using CodeSnippets.Services.Interfaces;
+using CodeSnippets.Utils;
 using CodeSnippets.Utils.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CodeSnippets.Services
 {
+    [DependencyInjection(typeof(IUserService), DependencyInjectionScope.Scoped)]
     public class UserService : IUserService
     {
         readonly IMapper _mapper;

@@ -3,6 +3,7 @@ using CodeSnippets.Database.Concrete;
 using CodeSnippets.Database.Concrete.Interfaces;
 using CodeSnippets.Database.Repositories.Interfaces;
 using CodeSnippets.Entities.Entities;
+using CodeSnippets.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -11,7 +12,7 @@ using System.Text;
 
 namespace CodeSnippets.Database.Repositories
 {
-
+    [DependencyInjection(typeof(ITagRepository), DependencyInjectionScope.Scoped)]
     public class TagRepository : RepositoryBase<Tag, CodeSnippetsDbContext>, ITagRepository
     {
         public TagRepository(ICodeSnippetsDbContextFactory contextFactory) : base(contextFactory)
