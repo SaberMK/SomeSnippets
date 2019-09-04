@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Database.Repositories.Interfaces;
+using CodeSnippets.Database.Repositories.M2MMappings.Interfaces;
 using CodeSnippets.Entities.Entities;
+using CodeSnippets.Entities.Entities.M2MMappings;
 using CodeSnippets.Services.Interfaces;
 using CodeSnippets.Utils;
 using CodeSnippets.Utils.Interfaces;
@@ -17,21 +19,30 @@ namespace CodeSnippets.Services
     public class UserService : IUserService
     {
         readonly IMapper _mapper;
-        readonly IUserRepository _userContext;
+        readonly IUserRepository _userRepository;
         readonly IUserPasswordEncoder _encoder;
+
+        ISnippetRepository _snippetRepository;
+        ILanguageRepository _languageRepository;
+        ISnippetTagRepository _snippetTagRepository;
         ITagRepository _tagRepository;
         public UserService(IMapper mapper, IUserRepository userContext, IUserPasswordEncoder encoder
-            , ITagRepository tagRepository)
+            , ISnippetRepository snippetRepository, ILanguageRepository languageRepository,
+        ISnippetTagRepository snippetTagRepository, ITagRepository tagRepository)
         {
             _mapper = mapper;
             _encoder = encoder;
-            _userContext = userContext;
+            _userRepository = userContext;
 
+            _snippetRepository = snippetRepository;
+            _languageRepository = languageRepository;
+            _snippetRepository = snippetRepository;
+            _snippetTagRepository = snippetTagRepository;
             _tagRepository = tagRepository;
         }
         public async Task<bool> IsUserExists(string username)
         {
-            var user = await _userContext.Query().SingleOrDefaultAsync(x => x.Username == username);
+            var user = await _userRepository.Query().SingleOrDefaultAsync(x => x.Username == username);
             return user != null;   
         }
 
@@ -39,7 +50,7 @@ namespace CodeSnippets.Services
         {
             try
             {
-                return await _userContext.Query().SingleAsync(x => x.Username == username && x.Password == _encoder.EncodeUserPassword(password));
+                return await _userRepository.Query().SingleAsync(x => x.Username == username && x.Password == _encoder.EncodeUserPassword(password));
             }
             catch //TODO
             {
@@ -51,15 +62,15 @@ namespace CodeSnippets.Services
         {
             try
             {
-                await _userContext.AddAsync(new User()
+                await _userRepository.AddAsync(new User()
                 {
                     Username = username,
                     Password = _encoder.EncodeUserPassword(password),
                     RegistrationDate = DateTime.Now
                 });
-                await _userContext.CommitAsync();
+                await _userRepository.CommitAsync();
 
-                return await _userContext.Query().SingleAsync(x => x.Username == username);
+                return await _userRepository.Query().SingleAsync(x => x.Username == username);
             }
             catch //TODO
             {
@@ -69,16 +80,45 @@ namespace CodeSnippets.Services
 
         public async Task<string> GetTestString()
         {
-            //Add Tag
-            _tagRepository.Add(new Tag()
-            {
-                Content = "C#"
-            });
-            _tagRepository.Add(new Tag()
-            {
-                Content = "JavaScript"
-            });
-            await _tagRepository.CommitAsync();
+            //await _snippetTagRepository.AddAsync(new SnippetTag()
+            //{
+            // Snippet = _snippetRepository.GetById(2),
+            // Tag = _tagRepository.GetById(3)
+            //});
+            //await _snippetTagRepository.AddAsync(new SnippetTag()
+            //{
+            //    Snippet = _snippetRepository.GetById(2),
+            //    Tag = _tagRepository.GetById(4)
+            //});
+            //await _snippetTagRepository.CommitAsync();
+
+
+//            _snippetRepository.Add(new Snippet()
+//            {
+//                Name = "Hello World on C#",
+//             Language = _languageRepository.GetById(1),
+//             Author = _userRepository.GetById(1),
+//             Description = "A simple hello world application via C#",
+//                Code = @"
+//// A Hello World! program in C#.
+//using System;
+//namespace HelloWorld
+//{
+//    class Hello 
+//    {
+//        static void Main() 
+//        {
+//            Console.WriteLine(""Hello World!"");
+
+//            // Keep the console window open in debug mode.
+//                Console.WriteLine(""Press any key to exit."");
+//            Console.ReadKey();
+//        }
+//    }
+//}
+//"
+//            });
+//            await _snippetRepository.CommitAsync();
             //var user = new User()
             //{
             //    Username = "TestUser",

@@ -43,7 +43,8 @@ namespace CodeSnippets
                 {
                     builder.AllowAnyOrigin()
                             .AllowAnyMethod()
-                            .AllowAnyHeader();
+                            .AllowAnyHeader()
+                            .AllowCredentials();
                 });
             });
 
@@ -66,15 +67,13 @@ namespace CodeSnippets
                  RequestPath = "/static"
             });
 
-            app.UseCors("hah");
+            app.UseCors("hah");          
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseCors();
-
+            
             app.UseMvc(); //TODO
         }
     }

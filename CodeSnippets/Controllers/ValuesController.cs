@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CodeSnippets.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeSnippets.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("hah")]
     public class ValuesController : ControllerBase
     {
         IUserService _userService;

@@ -60,7 +60,7 @@ namespace CodeSnippets.Database.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasMaxLength(200);
+                        .HasMaxLength(2000);
 
                     b.Property<string>("Description")
                         .IsRequired()

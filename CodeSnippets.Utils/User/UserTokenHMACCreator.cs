@@ -13,7 +13,12 @@ namespace CodeSnippets.Utils.User
         }
         public string CreateToken(string model)
         {
-            return new HmacSerializer<string>(model).Serialize(model);
+            return new HmacSerializer<string>(_key).Serialize(model);
+        }
+
+        public string DecodeToken(string token)
+        {
+            return new HmacSerializer<string>(_key).Deserialize(token);
         }
     }
 }

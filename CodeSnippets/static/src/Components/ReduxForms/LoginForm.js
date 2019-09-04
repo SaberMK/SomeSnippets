@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react'
 import { reduxForm, Field, formValueSelector } from "redux-form";
-import { formInput } from './Helpers';
+import { FormInput } from './Helpers';
 import axios from "axios";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -11,19 +11,21 @@ import { AUTH_USER } from '../../Actions/globalActions';
 import { AUTH_USER_API_PATH } from '../../Api';
 
 const LoginForm = props => {
-    let { authUser, values, history } = props;
+    let { authUser, values, history, hasToken } = props;
     return (
+        !hasToken ?
         <Form onSubmit={() => handleAuthUser(values, authUser, history)}>
             <Form.Field>
                 <label>Login</label>
-                <Field name="username" placeholder="Your login" id='username' width='6' component={formInput} />
+                <Field name="username" placeholder="Your login" id='username' width='6' component={FormInput} />
             </Form.Field>
             <Form.Field>
                 <label>Password</label>
-                <Field name="password" placeholder="Your password" id='password' width='6' hasPassword={true} component={formInput} />
+                <Field name="password" placeholder="Your password" id='password' width='6' hasPassword={true} component={FormInput} />
             </Form.Field>
             <Button type='submit' >Submit</Button>
-        </Form>
+        </Form> : //if has token
+        <div>You are already authorized!</div>
     )
 }
 
@@ -52,7 +54,8 @@ const handleAuthUser = ( values, authUser, history ) => {
 const selector = formValueSelector('loginForm');
 
 const mapStateToProps = state => ({
-    values : selector(state, 'username', 'password')
+    values : selector(state, 'username', 'password'),
+    hasToken : state.global.token ? true : false
 })
 
 const mapDispatchToProps = dispatch => {

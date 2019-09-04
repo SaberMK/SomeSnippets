@@ -36,7 +36,7 @@ namespace CodeSnippets.Database.Repositories
                 .IsRequired();
 
             builder.Property(snippet => snippet.Code)
-                .HasMaxLength(200)
+                .HasMaxLength(2000)
                 .IsRequired();
 
             builder.HasOne(snippet => snippet.Author)

@@ -1,33 +1,35 @@
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react'
 import { reduxForm, Field, formValueSelector } from "redux-form";
-import { formInput } from './Helpers';
+import { FormInput } from './Helpers';
 import axios from "axios";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import toastr from "toastr";
 
 import { AUTH_USER } from '../../Actions/globalActions';
-import { AUTH_USER_API_PATH, REGISTER_USER_API_PATH } from '../../Api';
+import { REGISTER_USER_API_PATH } from '../../Api';
 
 const RegistrationForm = props => {
-    let { authUser, values, history } = props;
+    let { authUser, values, history, hasToken } = props;
     return (
+        !hasToken ?
         <Form onSubmit={() => handleUserRegister(values, authUser, history)}>
             <Form.Field>
                 <label>Login</label>
-                <Field name="username" placeholder="Your login" id='username' width='6' component={formInput} />
+                <Field name="username" placeholder="Your login" id='username' width='6' component={FormInput} />
             </Form.Field>
             <Form.Field>
                 <label>Password</label>
-                <Field name="password" placeholder="Your password" id='password' width='6' hasPassword={true} component={formInput} />
+                <Field name="password" placeholder="Your password" id='password' width='6' hasPassword={true} component={FormInput} />
             </Form.Field>
             <Form.Field>
                 <label>Password Confirmation</label>
-                <Field name="passwordConfirmation" placeholder="Your password confirmation" id='passwordConfirmation' width='6' hasPassword={true} component={formInput} />
+                <Field name="passwordConfirmation" placeholder="Your password confirmation" id='passwordConfirmation' width='6' hasPassword={true} component={FormInput} />
             </Form.Field>
             <Button type='submit' >Submit</Button>
-        </Form>
+        </Form> : //if already has token
+        <div>You are already authorized!</div>
     )
 }
 
@@ -63,7 +65,8 @@ const handleUserRegister = ( values, authUser, history ) => {
 const selector = formValueSelector('registrationForm');
 
 const mapStateToProps = state => ({
-    values : selector(state, 'username', 'password', 'passwordConfirmation')
+    values : selector(state, 'username', 'password', 'passwordConfirmation'),
+    hasToken : state.global.token ? true : false
 })
 
 
