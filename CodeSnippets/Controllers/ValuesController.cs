@@ -13,7 +13,7 @@ namespace CodeSnippets.Controllers
     [EnableCors("hah")]
     public class ValuesController : ControllerBase
     {
-        IUserService _userService;
+        readonly IUserService _userService;
         public ValuesController(IUserService userService)
         {
             _userService = userService;

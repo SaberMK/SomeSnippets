@@ -6,9 +6,9 @@ C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\bin\Debug\netcoreapp2
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\bin\Debug\netcoreapp2.2\CodeSnippets.Tests.runtimeconfig.dev.json
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\bin\Debug\netcoreapp2.2\CodeSnippets.Tests.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\bin\Debug\netcoreapp2.2\CodeSnippets.Tests.pdb
-C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.csprojAssemblyReference.cache
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.AssemblyInfo.cs
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.dll
 C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.pdb
+C:\Users\User\source\repos\CodeSnippets\CodeSnippets.Tests\obj\Debug\netcoreapp2.2\CodeSnippets.Tests.csprojAssemblyReference.cache

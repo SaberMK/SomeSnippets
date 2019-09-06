@@ -10,6 +10,8 @@ import toastr from "toastr";
 import { AUTH_USER } from '../../Actions/globalActions';
 import { REGISTER_USER_API_PATH } from '../../Api';
 
+import { InputField } from 'react-semantic-redux-form' 
+
 const RegistrationForm = props => {
     let { authUser, values, history, hasToken } = props;
     return (
@@ -17,7 +19,7 @@ const RegistrationForm = props => {
         <Form onSubmit={() => handleUserRegister(values, authUser, history)}>
             <Form.Field>
                 <label>Login</label>
-                <Field name="username" placeholder="Your login" id='username' width='6' component={FormInput} />
+                <Field name="username" placeholder="Your login" id='username' width='6' component={InputField} />
             </Form.Field>
             <Form.Field>
                 <label>Password</label>

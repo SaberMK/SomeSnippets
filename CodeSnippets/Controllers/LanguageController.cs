@@ -20,18 +20,14 @@ namespace CodeSnippets.Controllers
     [EnableCors("hah")]
     public class LanguageController : ControllerBase
     {
-        readonly IUserService _userService;
         readonly ILanguageService _languageService;
-        readonly IMapper _mapper;
         readonly IUserTokenCreator _tokenCreator;
         readonly IResponseCreator _responseCreator;
 
-        public LanguageController(IUserService userService, ILanguageService languageService,
-            IMapper mapper, IUserTokenCreator tokenCreator, IResponseCreator responseCreator)
+        public LanguageController(ILanguageService languageService, IMapper mapper, 
+            IUserTokenCreator tokenCreator, IResponseCreator responseCreator)
         {
-            _userService = userService;
             _languageService = languageService;
-            _mapper = mapper;
             _tokenCreator = tokenCreator;
             _responseCreator = responseCreator;
         }

@@ -27,6 +27,9 @@ namespace CodeSnippets.Database.Repositories
         {
             builder.HasKey(snippet => snippet.Id);
 
+            builder.Property(snippet => snippet.Id)
+                .ValueGeneratedNever();
+
             builder.Property(snippet => snippet.Name)
                 .HasMaxLength(75)
                 .IsRequired();

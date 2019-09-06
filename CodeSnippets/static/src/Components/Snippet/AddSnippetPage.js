@@ -21,7 +21,7 @@ const AddSnippetPage = (props) => {
 }
 
 const getLanguages = (token, languages, updateLanguages) => {
-    if(languages.length>0 || languages.length===undefined) return;
+    if(languages.length>0) return;
       
     axios.post(UPDATE_LANGUAGES_API_PATH,{
         token
@@ -29,9 +29,9 @@ const getLanguages = (token, languages, updateLanguages) => {
     .then(res => {
         if(res.data.error === 0) {
             let result = res.data.response;
-            updateLanguages({
+            updateLanguages([
                 ...result
-            })
+            ])
         } else {
             console.log('Showing toast...', res.data.response);
             toastr.error(res.data.response, 'Error')

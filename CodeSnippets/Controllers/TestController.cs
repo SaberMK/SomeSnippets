@@ -14,7 +14,7 @@ namespace CodeSnippets.Controllers
     [EnableCors("hah")]
     public class TestController : Controller
     {
-        IUserService _userService;
+        readonly IUserService _userService;
         public TestController(IUserService userService)
         {
             _userService = userService;

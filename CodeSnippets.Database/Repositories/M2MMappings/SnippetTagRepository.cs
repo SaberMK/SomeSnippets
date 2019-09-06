@@ -27,6 +27,9 @@ namespace CodeSnippets.Database.Repositories.M2MMappings
         {
             builder.HasKey(snippetTag => snippetTag.Id);
 
+            builder.Property(snippetTag => snippetTag.Id)
+                .ValueGeneratedNever();
+
             builder.HasOne(snippetTag => snippetTag.Snippet)
                 .WithMany(snippet => snippet.SnippetTags)
                 .HasForeignKey(snippetTag => snippetTag.SnippetId)

@@ -57,6 +57,7 @@ namespace CodeSnippets.Controllers
                 return _responseCreator.CreateFailure("User exists");
             
             var user = await _userService.RegisterUser(request.Username, request.Password);
+
             if (user == null)
                 return _responseCreator.CreateFailure("Exception, dunno what exception it is, need to throw them and catch...");
 

@@ -25,6 +25,9 @@ namespace CodeSnippets.Database.Repositories
         {
             builder.HasKey(language => language.Id);
 
+            builder.Property(language => language.Id)
+                .ValueGeneratedNever();
+
             builder.Property(language => language.Name)
                 .HasMaxLength(30);
 
