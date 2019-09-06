@@ -32,21 +32,22 @@ namespace CodeSnippets.Services
             _tagReposory = tagRepository;
             _snippetTagRepository = snippetTagRepository;
         }
-        public async Task<Snippet> AddSnippet(string name, string description, User author, Language language, ICollection<Tag> tags)
+        public async Task<Snippet> AddSnippet(string name, string description, string code, User author, Language language, ICollection<Tag> tags)
         {
             var snippet = new Snippet()
             {
                 Name = name,
                 Description = description,
-                Author = author,
-                Language = language
+                Code = code,
+                Language = language,
+                Author = _userRepository.GetById(author.Id)
             };
 
-            snippet.SnippetTags = await BindTagsToSnippet(snippet, tags);
-
-            await _snippetRepository.AddAsync(snippet);
+            
+            snippet = await _snippetRepository.AddAsync(snippet);
             await _snippetRepository.CommitAsync();
-            await _snippetTagRepository.CommitAsync();
+
+            snippet.SnippetTags = await BindTagsToSnippet(snippet, tags);
 
             return snippet;
         }
@@ -59,6 +60,8 @@ namespace CodeSnippets.Services
                 Tag = tag
             }).ToArray();
             await _snippetTagRepository.AddAsync(snippetTags);
+            await _snippetTagRepository.CommitAsync();
+            snippetTags = tags.Select(tag => _snippetTagRepository.Query().FirstOrDefault(snippetTag => snippetTag.Tag == tag)).ToArray();
             return snippetTags;
         }
     }

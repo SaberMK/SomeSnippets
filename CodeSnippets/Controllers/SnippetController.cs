@@ -49,11 +49,14 @@ namespace CodeSnippets.Controllers
 
             var tags = await _tagService.AddOrUpdateTags(addSnippetViewModel.Tags);
             var language = _languageService.GetLanguageByContent(addSnippetViewModel.Language);
-            var snippet = await _snippetService.AddSnippet(addSnippetViewModel.Name, addSnippetViewModel.Description,
+
+            if (language == null)
+                return _responseCreator.CreateFailure("Bad language!");
+
+            var snippet = await _snippetService.AddSnippet(addSnippetViewModel.Name, addSnippetViewModel.Description, addSnippetViewModel.Code,
                                             user, language, tags);
-            //await Task.CompletedTask;
-            return _responseCreator.CreateSuccess(snippet);
-            //return _responseCreator.CreateSuccess("");
+
+            return _responseCreator.CreateSuccess("Snippet added successfully");
         }
     }
 }

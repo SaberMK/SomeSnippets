@@ -25,9 +25,6 @@ namespace CodeSnippets.Database.Repositories
         {
             builder.HasKey(tag => tag.Id);
 
-            builder.Property(tag => tag.Id)
-                .ValueGeneratedNever();
-
             builder.Property(tag => tag.Content)
                 .HasMaxLength(50);
 

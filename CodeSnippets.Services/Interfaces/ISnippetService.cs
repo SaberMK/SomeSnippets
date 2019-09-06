@@ -8,6 +8,6 @@ namespace CodeSnippets.Services.Interfaces
 {
     public interface ISnippetService
     {
-        Task<Snippet> AddSnippet(string name, string description, User author, Language language, ICollection<Tag> tags);
+        Task<Snippet> AddSnippet(string name, string description, string code, User author, Language language, ICollection<Tag> tags);
     }
 }

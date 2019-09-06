@@ -26,9 +26,6 @@ namespace CodeSnippets.Database.Repositories
         {
             builder.HasKey(user => user.Id);
 
-            builder.Property(user => user.Id)
-                .ValueGeneratedNever();
-
             builder.Property(user => user.Username)
                 .HasMaxLength(30)
                 .IsRequired();

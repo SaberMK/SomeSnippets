@@ -62,7 +62,8 @@ const handleAddSnippet = ( token, values, history ) => {
         ...values
     })
     .then(res => {
-        if(res.data.error=0) {
+        console.log(res);
+        if(res.data.error===0) {
             console.log(res.data);
             let result = res.data.response;
             history.push('/');

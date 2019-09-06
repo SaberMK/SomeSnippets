@@ -21,7 +21,9 @@ namespace CodeSnippets.Database.Migrations
 
             modelBuilder.Entity("CodeSnippets.Entities.Entities.Language", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .HasMaxLength(30);
@@ -33,7 +35,9 @@ namespace CodeSnippets.Database.Migrations
 
             modelBuilder.Entity("CodeSnippets.Entities.Entities.M2MMappings.SnippetTag", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<long>("SnippetId");
 
@@ -50,7 +54,9 @@ namespace CodeSnippets.Database.Migrations
 
             modelBuilder.Entity("CodeSnippets.Entities.Entities.Snippet", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -79,7 +85,9 @@ namespace CodeSnippets.Database.Migrations
 
             modelBuilder.Entity("CodeSnippets.Entities.Entities.Tag", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Content")
                         .HasMaxLength(50);
@@ -91,7 +99,9 @@ namespace CodeSnippets.Database.Migrations
 
             modelBuilder.Entity("CodeSnippets.Entities.Entities.User", b =>
                 {
-                    b.Property<long>("Id");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<byte>("AccessLevel")
                         .ValueGeneratedOnAdd()

@@ -21,11 +21,6 @@ namespace CodeSnippets.Services
         }
         public async Task<ICollection<Tag>> AddOrUpdateTags(string[] tags)
         {
-            //var tagEntities = tags.Select(tag => new Tag()
-            //{
-            //    Content = tag
-            //}).ToArray();
-
             var tagEntities = new List<Tag>();
 
             foreach(var tag in tags)
@@ -37,19 +32,12 @@ namespace CodeSnippets.Services
                     {
                         Content = tag
                     });
-                    await _tagRepository.CommitAsync();
-                    tagEntity = _tagRepository.Query().FirstOrDefault(x => x.Content == tag);
                 }
-                tagEntities.Add(tagEntity);
             }
 
             await _tagRepository.CommitAsync();
+            tagEntities = tags.Select(x => _tagRepository.Query().FirstOrDefault(y=>y.Content==x)).ToList();
             return tagEntities;
-            //tagEntities = tagEntities.Select(tag => _tagRepository.AddOrUpdate(tag)).ToArray();
-            //await _tagRepository.CommitAsync();
-
-            //var a = tagEntities.Select(x => _tagRepository.Update(x)).ToArray();
-            //return tagEntities;
         }
     }
 }
