@@ -7,9 +7,10 @@ import AddSnippetPage from "./Components/Snippet/AddSnippetPage.js";
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
+import ViewSnippetPage from './Components/Snippet/ViewSnippetPage.js';
 
 
-function App(props) {
+const App = (props) => {
   return (
     <BrowserRouter >
       <div className="App">
@@ -18,7 +19,8 @@ function App(props) {
             <Route path="/" exact component={MainPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/registration" component={RegistrationPage} />
-            <Route path="/addSnippet" component={AddSnippetPage} />
+            <Route path="/snippet/add" component={AddSnippetPage} />
+            <Route path="/snippet/view/:id" component={ViewSnippetPage} />
           </Container>
       </div>
     </BrowserRouter>

@@ -65,7 +65,7 @@ namespace CodeSnippets.Controllers
 
         [HttpGet]
         [Route("getSnippet")]
-        public async Task<ResponseViewModel> GetSnippet([FromQuery]int id)
+        public async Task<ResponseViewModel> GetSnippet(int id)
         {
             var snippet = await _snippetService.GetSnippetById(id);
             if (snippet == null)
