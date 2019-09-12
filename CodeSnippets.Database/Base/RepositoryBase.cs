@@ -1,9 +1,11 @@
 ﻿using CodeSnippets.Database.Interfaces;
 using CodeSnippets.Entities.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -118,6 +120,7 @@ namespace CodeSnippets.Database.Base
         public IQueryable<TEntity> Query()
         {
             return Set;
+            
         }
 
         public void Commit()
@@ -128,6 +131,24 @@ namespace CodeSnippets.Database.Base
         public async Task CommitAsync()
         {
             await DbContext.SaveChangesAsync();
+        }
+
+        public IIncludableQueryable<TEntity, TProperty> Include<TCEntity, TProperty>(
+          Expression<Func<TEntity, TProperty>> navigationPropertyPath) 
+            where TCEntity : class, IEntity, new()
+            where TProperty : class, IEntity, new()
+
+        {
+            Set.Include(x => x.Id).ThenInclude(x => x.ToString());
+            return default;
+        }
+
+        public IIncludableQueryable<TEntity, TProperty> ThenInclude<TCEntity, TPreviousProperty, TProperty>(
+            Expression<Func<TPreviousProperty, TProperty>> navigationPropertyPath) where TCEntity : class, IEntity, new()
+            where TProperty : class, IEntity, new()
+            where TPreviousProperty : class, IEntity, new()
+        {
+            return default;
         }
     }
 }

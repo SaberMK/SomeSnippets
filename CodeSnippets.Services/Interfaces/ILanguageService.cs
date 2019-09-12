@@ -10,5 +10,6 @@ namespace CodeSnippets.Services.Interfaces
     {
         IEnumerable<string> GetAllLanguages();
         Language GetLanguageByContent(string content);
+        Task<string> GetLanguageTextById(long id);
     }
 }

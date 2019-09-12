@@ -11,6 +11,7 @@ using System.Linq;
 using CodeSnippets.Database.Repositories.M2MMappings;
 using CodeSnippets.Database.Repositories.Interfaces;
 using CodeSnippets.Database.Repositories.M2MMappings.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSnippets.Services
 {
@@ -51,6 +52,29 @@ namespace CodeSnippets.Services
 
             return snippet;
         }
+
+        public async Task<Snippet> GetSnippetById(int id)
+        {
+            return await _snippetRepository.GetByIdAsync(id);
+        }
+
+        public async Task<Snippet> GetPrivateSnippet(int userId, int snippetId)
+        {
+            return await _snippetRepository.Query().FirstOrDefaultAsync(x => x.UserId == userId && x.Id == snippetId);
+        }
+
+        public async Task<ICollection<Tag>> GetTagsBySnippet(Snippet snippet)
+        {
+            return ( await _snippetRepository.Query()
+                .Include(x => x.SnippetTags)
+                .ThenInclude(y => y.Tag)
+                .Where(z => z.Id == snippet.Id)
+                .FirstAsync())
+                .SnippetTags
+                .Select(a=>a.Tag)
+                .ToArray();
+        }
+
 
         private async Task<ICollection<SnippetTag>> BindTagsToSnippet(Snippet snippet, ICollection<Tag> tags)
         {

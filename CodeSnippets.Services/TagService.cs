@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using CodeSnippets.Database.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSnippets.Services
 {
@@ -25,7 +26,7 @@ namespace CodeSnippets.Services
 
             foreach(var tag in tags)
             {
-                var tagEntity = _tagRepository.Query().FirstOrDefault(x => x.Content == tag);
+                var tagEntity = await _tagRepository.Query().FirstOrDefaultAsync(x => x.Content == tag);
                 if (tagEntity == null)
                 {
                     tagEntity = await _tagRepository.AddAsync(new Tag()

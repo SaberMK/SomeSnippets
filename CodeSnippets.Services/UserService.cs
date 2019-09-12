@@ -78,64 +78,9 @@ namespace CodeSnippets.Services
             }
         }
 
-        public async Task<string> GetTestString()
+        public async Task<User> GetUserById(long id)
         {
-            //await _snippetTagRepository.AddAsync(new SnippetTag()
-            //{
-            // Snippet = _snippetRepository.GetById(2),
-            // Tag = _tagRepository.GetById(3)
-            //});
-            //await _snippetTagRepository.AddAsync(new SnippetTag()
-            //{
-            //    Snippet = _snippetRepository.GetById(2),
-            //    Tag = _tagRepository.GetById(4)
-            //});
-            //await _snippetTagRepository.CommitAsync();
-
-
-//            _snippetRepository.Add(new Snippet()
-//            {
-//                Name = "Hello World on C#",
-//             Language = _languageRepository.GetById(1),
-//             Author = _userRepository.GetById(1),
-//             Description = "A simple hello world application via C#",
-//                Code = @"
-//// A Hello World! program in C#.
-//using System;
-//namespace HelloWorld
-//{
-//    class Hello 
-//    {
-//        static void Main() 
-//        {
-//            Console.WriteLine(""Hello World!"");
-
-//            // Keep the console window open in debug mode.
-//                Console.WriteLine(""Press any key to exit."");
-//            Console.ReadKey();
-//        }
-//    }
-//}
-//"
-//            });
-//            await _snippetRepository.CommitAsync();
-            //var user = new User()
-            //{
-            //    Username = "TestUser",
-            //    Password = "qwerty123",
-            //    RegistrationDate = DateTime.Now
-            //};
-            //await _userContext.AddAsync(user);
-            //await _userContext.CommitAsync();
-            //var newUser = await _userContext.Query().SingleAsync(x => x.Username == user.Username);
-            //return newUser.Id.ToString();
-
-            //var asd1 = new View1() { Obj1 = "Response! " };
-            //await Task.Delay(100);
-
-
-            return "))";
-            //return _mapper.Map<View1, View2>(asd1).Obj1;
+            return await _userRepository.GetByIdAsync(id);
         }
     }
 }

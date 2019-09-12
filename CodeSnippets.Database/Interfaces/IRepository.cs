@@ -1,7 +1,9 @@
 ﻿using CodeSnippets.Entities.Interfaces;
+using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,6 +46,8 @@ namespace CodeSnippets.Database.Interfaces
         IEnumerable<TEntity> Delete(IEnumerable<TEntity> entities);
 
         IQueryable<TEntity> Query();
+
+        
 
         void Commit();
 

@@ -30,5 +30,11 @@ namespace CodeSnippets.Services
             var res =  _languageRepository.Query().SingleOrDefault(lang => lang.Name == content);
             return res;
         }
+
+        public async Task<string> GetLanguageTextById(long id)
+        {
+            var lang = await _languageRepository.GetByIdAsync(id);
+            return lang.Name;
+        }
     }
 }
